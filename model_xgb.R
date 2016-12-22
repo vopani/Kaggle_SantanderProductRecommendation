@@ -219,8 +219,8 @@ params$min_child_weight <- 3
 params$eval_metric <- "mlogloss"
 
 ## xgboost training
-model_xgb_1 <- xgb.train(params = params, xgtrain1, nrounds = 140, nthread = 23)
-model_xgb_2 <- xgb.train(params = params, xgtrain2, nrounds = 140, nthread = 23)
+model_xgb_1 <- xgb.train(params = params, xgtrain1, nrounds = 140, nthread = -1)
+model_xgb_2 <- xgb.train(params = params, xgtrain2, nrounds = 140, nthread = -1)
 
 ## xgboost predictions
 pred_1 <- predict(model_xgb_1, xgtest1)
